@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import countriesService from "../../services/countries.service";
-import { Country } from "../countries/country";
+import { Country } from "../common/country";
 import { PopulationChart } from "./population-chart";
 import "./country-info.styles.css";
 

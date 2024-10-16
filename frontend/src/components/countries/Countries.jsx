@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import countriesService from "../../services/countries.service";
-import { Country } from "./country";
+import { Country } from "../common/country";
 import "./countries.styles.css";
 
 const Countries = () => {

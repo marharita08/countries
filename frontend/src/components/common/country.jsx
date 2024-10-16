@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./country.styles.css";
 
 const Country = ({ country }) => {
@@ -6,7 +8,7 @@ const Country = ({ country }) => {
   return (
     <div className="country">
       <div>{countryCode}</div>
-      <div>{name}</div>
+      <Link to={`/countries/${countryCode}`} className="card-country-name">{name}</Link>
     </div>
   );
 };
