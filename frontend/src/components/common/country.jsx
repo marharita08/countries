@@ -8,7 +8,9 @@ const Country = ({ country }) => {
   return (
     <div className="country">
       <div>{countryCode}</div>
-      <Link to={`/countries/${countryCode}`} className="card-country-name">{name}</Link>
+      <Link to={`/countries/${countryCode}`} className="card-country-name">
+        {name}
+      </Link>
     </div>
   );
 };

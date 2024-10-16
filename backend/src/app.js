@@ -3,6 +3,7 @@ import cors from "cors";
 
 import { env } from "./configs/envConfigs.js";
 import contriesRoutes from "./routes/countries.routes.js";
+import { errorHandler } from "./middlewares/error-handler.middleware.js";
 
 const app = express();
 const PORT = env.PORT;
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/countries", contriesRoutes);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
