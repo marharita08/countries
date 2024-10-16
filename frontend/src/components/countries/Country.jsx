@@ -1,7 +1,7 @@
 import "./country.styles.css";
 
-const Country = country => {
-  const { name, countryCode } = country.country;
+const Country = ({ country }) => {
+  const { name, countryCode } = country;
 
   return (
     <div className="country">

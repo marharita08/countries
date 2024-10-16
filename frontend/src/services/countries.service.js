@@ -8,7 +8,7 @@ class CountriesService {
   }
 
   async getCountryInfo(countryCode) {
-    return await apiService.get(`${baseUrl}/countries/${countryCode}`);
+    return await apiService.get(`${baseUrl}countries/${countryCode}`);
   }
 }
 
