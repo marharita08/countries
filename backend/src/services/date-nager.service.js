@@ -5,7 +5,11 @@ const baseUrl = env.DATE_NAGER_BASE_URL;
 
 class DateNagerService {
   async getAvailableCountries() {
-    return apiService.get(`${baseUrl}AvailableCountries`);
+    return await apiService.get(`${baseUrl}AvailableCountries`);
+  }
+
+  async getCountryInfo(countryCode) {
+    return await apiService.get(`${baseUrl}CountryInfo/${countryCode}`);
   }
 }
 
