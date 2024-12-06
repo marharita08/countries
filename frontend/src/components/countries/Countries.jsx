@@ -37,7 +37,7 @@ const Countries = () => {
           ))}
         </div>
       ) : (
-        <ErrorDisplay message={message}/>
+        <ErrorDisplay message={message} />
       )}
     </div>
   );

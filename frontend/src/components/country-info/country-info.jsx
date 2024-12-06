@@ -29,7 +29,7 @@ const CountryInfo = () => {
   }, [code]);
 
   return (
-    <>
+    <div className="country-info-container">
       {isLoading ? (
         <Loader />
       ) : country ? (
@@ -40,18 +40,24 @@ const CountryInfo = () => {
             )}
             <h1 className="country-name">{country.officialName}</h1>
           </header>
-          <div className="container">
-            <h2 className="title">Region</h2>
-            <div>{country.region}</div>
+          <div className="common-info">
+            <div className="container">
+              <h2 className="title">Common Name</h2>
+              <div className="info">{country.commonName}</div>
+            </div>
+            <div className="container">
+              <h2 className="title">Region</h2>
+              <div className="info">{country.region}</div>
+            </div>
           </div>
           {country.borders && country.borders.length > 0 && (
             <div className="container">
               <h2 className="title">Borders</h2>
-              <div className="borders">
+              <div className="borders info">
                 {country.borders.map(border => (
                   <Country
                     country={{
-                      name: border.officialName,
+                      name: border.commonName,
                       countryCode: border.countryCode
                     }}
                     key={border.countryCode}
@@ -68,9 +74,9 @@ const CountryInfo = () => {
           )}
         </div>
       ) : (
-        <ErrorDisplay message={message}/>
+        <ErrorDisplay message={message} />
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,13 @@
+.country-info-container {
+  padding: 50px;
+  background-color: #fafbfc;
+  min-height: 100vh;
+}
+
 .borders {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   flex-wrap: wrap;
-  padding: 5px;
 }
 
 .country-name {
@@ -15,6 +20,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  border-bottom: 1px solid #e8e9eb;
 }
 
 .container {
@@ -24,4 +30,14 @@
 .title {
   font-size: 24px;
   font-weight: 700;
+}
+
+.info {
+  padding: 5px;
+  width: 100%;
+}
+
+.common-info {
+  display: flex;
+  gap: 20px;
 }
