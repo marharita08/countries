@@ -16,7 +16,8 @@ const Countries = () => {
   }, []);
 
   return (
-    <>
+    <div className="countries-container">
+      <h1 className="countries-title">Countries</h1>
       {countries.length > 0 && (
         <div className="countries">
           {countries.map(country => (
@@ -24,7 +25,7 @@ const Countries = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

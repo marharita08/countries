@@ -1,6 +1,17 @@
+.countries-container {
+  padding: 50px;
+  background-color: #fafbfc;
+}
+
+.countries-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .countries {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   flex-wrap: wrap;
   padding: 5px;
+  justify-content: center;
 }
