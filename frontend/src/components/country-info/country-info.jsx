@@ -2,17 +2,27 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import countriesService from "../../services/countries.service";
-import { Country } from "../common/country";
+import { Country } from "../common/country/country";
 import { PopulationChart } from "./population-chart";
 import "./country-info.styles.css";
+import { Loader } from "../common/loader/loader";
+import { ErrorDisplay } from "../common/error/error-display";
 
 const CountryInfo = () => {
   const { code } = useParams();
   const [country, setCountry] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      setCountry(await countriesService.getCountryInfo(code));
+      try {
+        setCountry(await countriesService.getCountryInfo(code));
+      } catch {
+        setMessage(`Data for country ${code} not found`);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchData();
@@ -20,7 +30,9 @@ const CountryInfo = () => {
 
   return (
     <>
-      {country && (
+      {isLoading ? (
+        <Loader />
+      ) : country ? (
         <div>
           <header className="header">
             {country.flagUrl && (
@@ -55,6 +67,8 @@ const CountryInfo = () => {
             </div>
           )}
         </div>
+      ) : (
+        <ErrorDisplay message={message}/>
       )}
     </>
   );

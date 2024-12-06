@@ -1,6 +1,7 @@
 .countries-container {
   padding: 50px;
   background-color: #fafbfc;
+  min-height: 100vh;
 }
 
 .countries-title {
