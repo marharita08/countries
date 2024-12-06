@@ -10,10 +10,6 @@ const PORT = env.PORT;
 
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Hello, Express.js!");
-});
-
 app.use("/countries", contriesRoutes);
 app.use(errorHandler);
 

@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Countries } from "./components/countries/countries";
 import { CountryInfo } from "./components/country-info/country-info";
-import "./App.css";
 
 function App() {
   return (

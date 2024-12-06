@@ -17,13 +17,11 @@
   align-items: center;
 }
 
-.borders-container,
-.population-container {
+.container {
   padding: 20px;
 }
 
-.borders-title,
-.population-title {
+.title {
   font-size: 24px;
   font-weight: 700;
 }

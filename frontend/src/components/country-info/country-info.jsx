@@ -18,38 +18,42 @@ const CountryInfo = () => {
     fetchData();
   }, [code]);
 
-  useEffect(() => {
-    console.log(country);
-  }, [country]);
-
   return (
     <>
       {country && (
         <div>
-          <div className="header">
-            <img src={country.flagUrl.data.flag} alt={code} width={100} />
-            <div className="country-name">{country.officialName}</div>
+          <header className="header">
+            {country.flagUrl && (
+              <img src={country.flagUrl} alt={code} width={100} />
+            )}
+            <h1 className="country-name">{country.officialName}</h1>
+          </header>
+          <div className="container">
+            <h2 className="title">Region</h2>
+            <div>{country.region}</div>
           </div>
-          <div className="borders-container">
-            <div className="borders-title">Borders</div>
-            <div className="borders">
-              {country.borders.map(border => (
-                <Country
-                  country={{
-                    name: border.officialName,
-                    countryCode: border.countryCode
-                  }}
-                  key={border.countryCode}
-                />
-              ))}
+          {country.borders && country.borders.length > 0 && (
+            <div className="container">
+              <h2 className="title">Borders</h2>
+              <div className="borders">
+                {country.borders.map(border => (
+                  <Country
+                    country={{
+                      name: border.officialName,
+                      countryCode: border.countryCode
+                    }}
+                    key={border.countryCode}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="population-container">
-            <div className="population-title">Population</div>
-            <PopulationChart
-              populationCounts={country.population.data.populationCounts}
-            />
-          </div>
+          )}
+          {country.population && (
+            <div className="container">
+              <h2 className="title">Population</h2>
+              <PopulationChart populationCounts={country.population} />
+            </div>
+          )}
         </div>
       )}
     </>
