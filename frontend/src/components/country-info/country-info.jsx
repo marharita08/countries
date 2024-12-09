@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import countriesService from "../../services/countries.service";
 import { Country } from "../common/country/country";
@@ -39,6 +39,7 @@ const CountryInfo = () => {
               <img src={country.flagUrl} alt={code} width={100} />
             )}
             <h1 className="country-name">{country.officialName}</h1>
+            <Link className="button" to="/countries">Back to Countries</Link>
           </header>
           <div className="common-info">
             <div className="container">
