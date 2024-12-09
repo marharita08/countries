@@ -35,11 +35,15 @@ const CountryInfo = () => {
       ) : country ? (
         <div>
           <header className="header">
-            {country.flagUrl && (
-              <img src={country.flagUrl} alt={code} width={100} />
-            )}
-            <h1 className="country-name">{country.officialName}</h1>
-            <Link className="button" to="/countries">Back to Countries</Link>
+            <div className="country-header">
+              {country.flagUrl && (
+                <img src={country.flagUrl} alt={code} width={100} />
+              )}
+              <h1 className="country-name">{country.officialName}</h1>
+            </div>
+            <Link className="button" to="/countries">
+              Back to Countries
+            </Link>
           </header>
           <div className="common-info">
             <div className="container">
