@@ -1,7 +1,7 @@
 .countries-container {
   box-sizing: border-box;
   padding: 50px;
-  background-color: #fafbfc;
+  background-color: var(--light-gray);
   min-height: 100vh;
 }
 

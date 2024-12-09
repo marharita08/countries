@@ -8,21 +8,21 @@
 
 .error-box {
   text-align: center;
-  border: 1px solid #ff4d4d;
+  border: 1px solid var(--error-red);
   border-radius: 8px;
   padding: 20px;
   max-width: 400px;
-  background-color: #ffe6e6;
+  background-color: var(--light-error);
 }
 
 .error-title {
   font-size: 2rem;
-  color: #d60000;
+  color: var(--dark-red);
   margin-bottom: 10px;
 }
 
 .error-message {
   font-size: 1rem;
-  color: #333;
+  color: var(--dark-gray);
   margin: 0;
 }
