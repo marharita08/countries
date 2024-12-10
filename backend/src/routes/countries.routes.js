@@ -16,15 +16,7 @@ router.get(
   "/:code",
   asyncHandler(async (req, res) => {
     const { code } = req.params;
-    console.log(`Received request for country with code: ${code}`);
-    try {
-      const countryInfo = await countriesService.getCountryInfo(code);
-      console.log("Country info:", countryInfo);
-      return res.send(countryInfo);
-    } catch (error) {
-      console.error("Error:", error);
-      return res.status(500).send({ message: "Internal Server Error" });
-    }
+    return res.send(await countriesService.getCountryInfo(code));
   })
 );
 
