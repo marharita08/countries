@@ -4,11 +4,12 @@ This application displays data about countries and consists of two parts: the ba
 
 ## Features
 
-- Display country-specific data such as population and borders.
+- Display country-specific data such as name, flag, region, population and borders.
 - Fetches data from external APIs.
 
 ## Technologies
 
+- **JavaScript**
 - **Frontend**: React, Axios
 - **Backend**: Node.js, Express
 - **APIs used**:
@@ -41,9 +42,11 @@ This application displays data about countries and consists of two parts: the ba
 
 3. Create a `.env` file with the following content:
 
-   PORT=3001  
-   DATE_NAGER_BASE_URL=https://date.nager.at/api/v3/  
+```
+   PORT=3001
+   DATE_NAGER_BASE_URL=https://date.nager.at/api/v3/
    COUNTRIES_NOW_BASE_URL=https://countriesnow.space/api/v0.1/
+```
 
 4. Start the backend server:
 

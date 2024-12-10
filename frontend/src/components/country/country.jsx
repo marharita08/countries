@@ -6,12 +6,12 @@ const Country = ({ country }) => {
   const { name, countryCode } = country;
 
   return (
-    <div className="country">
-      <div>{countryCode}</div>
-      <Link to={`/countries/${countryCode}`} className="card-country-name">
-        {name}
-      </Link>
-    </div>
+    <Link to={`/countries/${countryCode}`} className="card-country">
+      <div className="country">
+        <div>{countryCode}</div>
+        <div>{name}</div>
+      </div>
+    </Link>
   );
 };
 

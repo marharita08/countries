@@ -1,0 +1,21 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  width: 280px;
+  box-shadow: 0 4px 8px var(--transparent-black-10);
+  background-color: white;
+}
+
+.card-country {
+  color: var(--black);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.card-country:hover {
+  color: var(--teal);
+  transform: scale(1.03);
+}

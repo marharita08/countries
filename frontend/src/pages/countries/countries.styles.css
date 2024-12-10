@@ -1,0 +1,19 @@
+.countries-container {
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: var(--light-gray);
+  min-height: 100vh;
+}
+
+.countries-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.countries {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+}

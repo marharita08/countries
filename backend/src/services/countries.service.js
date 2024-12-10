@@ -8,15 +8,16 @@ class CountriesService {
 
   async getCountryInfo(countryCode) {
     const countryInfo = await dateNagerService.getCountryInfo(countryCode);
-    const flagUrl = await countriesNowService.getFlagUrl(countryCode);
-    const population = await countriesNowService.getPopulationData(
-      flagUrl.data.iso3
-    );
+    const flag = await countriesNowService.getFlagUrl(countryCode);
+    let population = null;
+    if (flag) {
+      population = await countriesNowService.getPopulationData(flag.iso3);
+    }
 
     return {
       ...countryInfo,
-      population,
-      flagUrl
+      population: population?.populationCounts ?? null,
+      flagUrl: flag?.flag ?? null
     };
   }
 }
