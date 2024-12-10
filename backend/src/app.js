@@ -11,4 +11,4 @@ app.use(cors());
 app.use("/countries", contriesRoutes);
 app.use(errorHandler);
 
-export default app;
+module.exports = app;
