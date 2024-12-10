@@ -1,12 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 
 import countriesService from "../../services/countries.service";
-import { Country } from "../common/country/country";
-import { PopulationChart } from "./population-chart";
-import "./country-info.styles.css";
-import { Loader } from "../common/loader/loader";
-import { ErrorDisplay } from "../common/error/error-display";
+import { Country } from "../../components/country/country";
+import { PopulationChart } from "../../components/population-chart/population-chart";
+import { Loader } from "../../components/loader/loader";
+import { ErrorDisplay } from "../../components/error/error-display";
 import { useFetchData } from "../../hooks/use-fetch-data";
+import "./country-info.styles.css";
 
 const CountryInfo = () => {
   const { code } = useParams();

@@ -1,7 +1,7 @@
 import countriesService from "../../services/countries.service";
-import { Country } from "../common/country/country";
-import { Loader } from "../common/loader/loader";
-import { ErrorDisplay } from "../common/error/error-display";
+import { Country } from "../../components/country/country";
+import { Loader } from "../../components/loader/loader";
+import { ErrorDisplay } from "../../components/error/error-display";
 import { useFetchData } from "../../hooks/use-fetch-data";
 import "./countries.styles.css";
 

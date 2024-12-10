@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { Countries } from "./components/countries/countries";
-import { CountryInfo } from "./components/country-info/country-info";
+import { Countries } from "./pages/countries/countries";
+import { CountryInfo } from "./pages/country-info/country-info";
 
 function App() {
   return (
