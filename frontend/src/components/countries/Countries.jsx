@@ -1,29 +1,16 @@
-import { useEffect, useState } from "react";
-
 import countriesService from "../../services/countries.service";
 import { Country } from "../common/country/country";
 import { Loader } from "../common/loader/loader";
 import { ErrorDisplay } from "../common/error/error-display";
+import { useFetchData } from "../../hooks/use-fetch-data";
 import "./countries.styles.css";
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setCountries(await countriesService.getAvailableCountries());
-      } catch {
-        setMessage("No countries available.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const {
+    data: countries,
+    isLoading,
+    errorMessage
+  } = useFetchData(countriesService.getAvailableCountries, []);
 
   return (
     <div className="countries-container">
@@ -37,7 +24,7 @@ const Countries = () => {
           ))}
         </div>
       ) : (
-        <ErrorDisplay message={message} />
+        <ErrorDisplay message={errorMessage} />
       )}
     </div>
   );

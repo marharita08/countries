@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import countriesService from "../../services/countries.service";
@@ -7,26 +6,16 @@ import { PopulationChart } from "./population-chart";
 import "./country-info.styles.css";
 import { Loader } from "../common/loader/loader";
 import { ErrorDisplay } from "../common/error/error-display";
+import { useFetchData } from "../../hooks/use-fetch-data";
 
 const CountryInfo = () => {
   const { code } = useParams();
-  const [country, setCountry] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setCountry(await countriesService.getCountryInfo(code));
-      } catch {
-        setMessage(`Data for country ${code} not found`);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [code]);
+  const {
+    data: country,
+    isLoading,
+    errorMessage
+  } = useFetchData(() => countriesService.getCountryInfo(code), null);
 
   return (
     <div className="country-info-container">
@@ -79,7 +68,7 @@ const CountryInfo = () => {
           )}
         </div>
       ) : (
-        <ErrorDisplay message={message} />
+        <ErrorDisplay message={errorMessage} />
       )}
     </div>
   );
